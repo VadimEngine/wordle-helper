@@ -1,0 +1,23 @@
+.marking-radio {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.1s ease;
+  padding: 0;
+  outline: none;
+}
+
+.marking-radio:hover {
+  transform: scale(1.1);
+}
+
+.marking-radio.selected {
+  border-color: #ffffff;
+  transform: scale(1.15);
+}
+
+.swatch-dark   { background-color: #3a3a3c; }
+.swatch-yellow { background-color: #b59f3b; }
+.swatch-green  { background-color: #538d4e; }

@@ -1,0 +1,26 @@
+.letter-slot {
+  width: clamp(50px, 14vw, 62px);
+  height: clamp(50px, 14vw, 62px);
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #121213;
+  color: #ffffff;
+  user-select: none;
+  touch-action: manipulation;
+  transition: border-color 0.1s ease;
+}
+
+.letter-slot:hover {
+  border-color: #565758;
+}
+
+.letter-slot.selected {
+  border-color: #999;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}

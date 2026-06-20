@@ -1,0 +1,40 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* All keys are the same fixed size.
+   Shorter rows (9 or 7 keys) are naturally narrower when centered,
+   creating the real keyboard stagger without any margin tricks. */
+.key {
+  width: min(43px, 8vw);
+  height: min(58px, 14.5vw);
+  flex: none;
+  border: none;
+  border-radius: 4px;
+  background-color: #818384;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: min(13px, 3.2vw);
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  touch-action: manipulation;
+  transition: background-color 0.1s ease;
+}
+
+.key:active {
+  opacity: 0.7;
+}
+
+.key-dark   { background-color: #3a3a3c; }
+.key-yellow { background-color: #b59f3b; }
+.key-green  { background-color: #538d4e; }

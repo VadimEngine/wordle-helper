@@ -1,0 +1,10 @@
+.App {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #121213;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  box-sizing: border-box;
+}

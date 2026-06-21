@@ -2,7 +2,7 @@
   "name": "wordle-helper",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vadimengine.github.io/hello-world/wordle-helper",
+  "homepage": "https://vadimengine.github.io/wordle-helper",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -14,7 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --dest wordle-helper --repo https://github.com/VadimEngine/hello-world.git"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

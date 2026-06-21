@@ -81,24 +81,17 @@ const WordleHelper = () => {
   const matchingWords = useMemo(() => {
     if (!showCount) return [];
 
-    const slotLetters = new Set(slots.filter(Boolean).map(l => l.toLowerCase()));
-
     return wordleWords.filter(word => {
       const w = word.toLowerCase();
 
+      // 1. Slot letters fix exact positions
       for (let i = 0; i < SLOT_COUNT; i++) {
         const letter = slots[i]?.toLowerCase();
-        if (!letter) continue;
-        const mark = keyMarks[letter];
-        if (mark === 'yellow') {
-          if (!w.includes(letter) || w[i] === letter) return false;
-        } else {
-          if (w[i] !== letter) return false;
-        }
+        if (letter && w[i] !== letter) return false;
       }
 
+      // 2. Keyboard marks: yellow/green = must contain, dark = must not contain
       for (const [letter, color] of Object.entries(keyMarks)) {
-        if (slotLetters.has(letter)) continue;
         if (color === 'dark' && w.includes(letter)) return false;
         if ((color === 'yellow' || color === 'green') && !w.includes(letter)) return false;
       }

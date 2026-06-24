@@ -65,6 +65,15 @@ const WordleHelper = () => {
     setSelectedColor(prev => (prev === color ? null : color));
   };
 
+  const handleReset = () => {
+    setSlots(Array(SLOT_COUNT).fill(''));
+    setKeyMarks({});
+    setSelectedSlot(0);
+    setSelectedColor(null);
+    setShowCount(false);
+    setWordsOpen(false);
+  };
+
   const handleKeyClick = (letter) => {
     if (selectedColor !== null) {
       handleKeyMark(letter);
@@ -127,6 +136,7 @@ const WordleHelper = () => {
           <MarkingRadio color="dark"   selected={selectedColor === 'dark'}   onChange={() => handleColorChange('dark')} />
           <MarkingRadio color="yellow" selected={selectedColor === 'yellow'} onChange={() => handleColorChange('yellow')} />
           <MarkingRadio color="green"  selected={selectedColor === 'green'}  onChange={() => handleColorChange('green')} />
+          <button className="reset-button" onClick={handleReset}>Reset</button>
         </div>
 
         <div className="count-row">
